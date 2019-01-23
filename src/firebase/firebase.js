@@ -1,20 +1,20 @@
 import * as firebase from 'firebase';
 
 const config = {
-    apiKey: "AIzaSyD2W93u3FVN60c4rp1d_xxPSh-gKI1XKMA",
-    authDomain: "expensify-app-a450d.firebaseapp.com",
-    databaseURL: "https://expensify-app-a450d.firebaseio.com",
-    projectId: "expensify-app-a450d",
-    storageBucket: "expensify-app-a450d.appspot.com",
-    messagingSenderId: "821207902565"
+  apiKey: "AIzaSyD2W93u3FVN60c4rp1d_xxPSh-gKI1XKMA",
+  authDomain: "expensify-app-a450d.firebaseapp.com",
+  databaseURL: "https://expensify-app-a450d.firebaseio.com",
+  projectId: "expensify-app-a450d",
+  storageBucket: "expensify-app-a450d.appspot.com",
+  messagingSenderId: "821207902565"
   };
 
 firebase.initializeApp(config);
 
 const database=firebase.database();
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
-
-export {firebase,database as default};
+export {firebase,googleAuthProvider,database as default};
 
 // database.ref('expenses').on('child_removed',(snapshot)=>{
 //     console.log(snapshot.key,snapshot.val());
